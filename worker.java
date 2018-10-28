@@ -1,4 +1,8 @@
-package com.hackathon;
+package sample;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class worker {
     private String name;
@@ -11,6 +15,11 @@ public class worker {
     private boolean payVerified;
     private boolean paidOnTime;
 
+    private LocalDate birthday;
+    private LocalDate dateLastPaid;
+
+    private static DateTimeFormatter FORMAT = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
 
     public worker (String name, int age, float wage, String bankAccount) {
         this.name = name;
@@ -21,7 +30,6 @@ public class worker {
         this.ageVerified = false;
         this.payVerified = false;
         this.paidOnTime = false;
-
 
     }
 
@@ -69,9 +77,8 @@ public class worker {
 
     public boolean timeVerity() { return paidOnTime; }
 
+    public LocalDate getBirthday() { return birthday; }
 
-
-
-
+    public LocalDate getDateLastPaid() { return dateLastPaid; }
 
 }
